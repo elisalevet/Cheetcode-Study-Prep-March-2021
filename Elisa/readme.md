@@ -1,6 +1,8 @@
 ARRAYS
+
 ## Question #1 Google Interview Question Two Sum (Easy)
-``` Javascript
+
+```Javascript
 
 
 // Naive Solution
@@ -17,7 +19,9 @@ const twoSum = (nums, target) => {
 	return result;
 }
 ```
+
 // Optimized Solution
+
 ```Javascript
 const twoSum = (nums, target) =>  {
   let map = {}
@@ -33,8 +37,29 @@ const twoSum = (nums, target) =>  {
        return [i, map[difference]]
      }
    }
+
+   // different approach
+
+   const twoSumPointer = (nums, target) => {
+     let left = 0
+     let right = nums.length -1
+
+     while (left !== right){
+       const sum = nums[right] + nums[left]
+
+       if(sum === target) {
+         return [left, right]
+       } else if (sum < target) {
+         left ++
+       } else {
+         right --
+       }
+     }
+   }
 ```
+
 ## Question #2 Container With Most Water (Medium)
+
 ```Javascript
 const maxArea = (array)=> {
   let pointer1 = 0;
@@ -55,7 +80,9 @@ const maxArea = (array)=> {
 return maxArea
 };
 ```
+
 ## Question #3 Trapping Rain Water (Hard)
+
 ```Javascript
 const trapRain = (array) => {
  if (height === null || height.length < 3) return 0
@@ -110,8 +137,11 @@ const trap = function(height) {
 };
 
 ```
+
 STRINGS
+
 ## Question #4 Backspace String Compare (Easy)
+
 ```Javascript
 const backSpace = (string1, string2) => {
   const trim = (string) => {
@@ -129,7 +159,9 @@ const backSpace = (string1, string2) => {
   return trim(string1) === trim(string2)
 }
 ```
+
 ## Question #5 Longest Substring Without Repeating Characters (Medium)
+
 ```Javascript
 const longestSubstring = (string) => {
   let left = 0;
@@ -150,9 +182,11 @@ const longestSubstring = (string) => {
     return maxLength
 }
 ```
+
 ## Question #6a Valid Palindrome(Easy)
 
 Naive
+
 ```Javascript
 const isPalindrome = (string) => {
   string= string.replace(/[^a-zA-Z0-9]/g,"").toLowerCase();
@@ -161,6 +195,7 @@ const isPalindrome = (string) => {
   return s === array
 }
 ```
+
 ```Javascript
 cons isPalindrome = (string) => {
   string= string.replace(/[^a-zA-Z0-9]/g,"").toLowerCase();
@@ -173,7 +208,9 @@ cons isPalindrome = (string) => {
   return s === newString
 }
 ```
+
 Optimized
+
 ```Javascript
 const isPalindrome =(string) => {
     string= string.replace(/[^a-zA-Z0-9]/g,"").toLowerCase();
@@ -190,7 +227,9 @@ const isPalindrome =(string) => {
     return true
 }
 ```
+
 ## Question #6b Almost Palindrome (Easy)
+
 ```Javascript
 const almostPalindrome = (string) => {
 let leftIdx = 0;
